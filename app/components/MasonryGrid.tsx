@@ -27,16 +27,28 @@ const MasonryGrid = ({
         columnClassName=""
       >
         {images.map((image, index) => (
-          <img
+          <div
             key={index}
-            src={image.url}
-            alt="123"
-            className="my-4 mx-auto cursor-pointer hover:opacity-90"
+            className="relative group"
             onClick={() => {
               lightboxRef.current?.openGallery(index);
-              console.log("test");
             }}
-          />
+          >
+            <img
+              key={index}
+              src={image.url}
+              alt="123"
+              className="flex justify-center align-center my-4 mx-auto hover:opacity-90 "
+              onClick={() => {
+                lightboxRef.current?.openGallery(index);
+                console.log("test");
+              }}
+            />
+            <div className="absolute z-40 bg-gradient-to-t from-stone-900 w-full h-full left-0 bottom-0 opacity-0 group-hover:translate-y-0 group-hover:opacity-50 cursor-pointer"></div>
+            <div className="absolute z-50 left-0 bottom-0 p-5 m-auto flex justify-center w-full stext-center translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-150 ease-out hover:ease-in">
+              <div className="text-white text-sm">{image.description}</div>
+            </div>
+          </div>
           //     <Image
           //     key={index}
           //     src={index}
