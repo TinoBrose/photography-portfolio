@@ -132,6 +132,7 @@ const Navbar = () => {
                 className={`${styles.navlinkMobile} ${
                   pathname === "/" ? styles.active : ""
                 }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 work
               </Link>
@@ -140,6 +141,7 @@ const Navbar = () => {
                 className={`${styles.navlinkMobile} ${
                   pathname === "/about" ? styles.active : ""
                 }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 about
               </Link>
@@ -148,6 +150,7 @@ const Navbar = () => {
                 className={`${styles.navlinkMobile} ${
                   pathname === "/contact" ? styles.active : ""
                 }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 contact
               </Link>
@@ -157,6 +160,7 @@ const Navbar = () => {
                 href="https://www.instagram.com/brose.matthias/"
                 target="_blank"
                 className="flex justify-center items-center p-4"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <FaInstagram className="text-xl" />
               </Link>
