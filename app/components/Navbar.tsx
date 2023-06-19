@@ -1,20 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import "../globals.css";
-import { Nunito, MuseoModerno } from "next/font/google";
-import bgImage from "../public/bg-img.avif";
 import { FaInstagram } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 const styles = {
-  navlink:
-    "text-sm text-stone-500 hover:bg-opacity-90 font-sans uppercase hover:text-white p-2",
+  navlink: "text-sm text-stone-500 font-sans uppercase hover:text-white p-2",
   navlinkMobile:
-    "text-sm text-stone-500 hover:bg-opacity-90 font-sans uppercase hover:text-white p-6",
+    "text-sm text-stone-500 font-sans uppercase hover:text-white p-6",
   active: "text-white",
 };
 
@@ -46,15 +42,16 @@ const Navbar = () => {
 
   return (
     <header
+      onClick={() => mobileMenuOpen && setMobileMenuOpen(!mobileMenuOpen)}
       className={`fixed top-0 w-full ${
         mobileMenuOpen ? "h-full" : "h-[90px]"
-      }  px-10 z-30 text-white bg-stone-900  transition duration-500 drop-shadow-md ${
+      }  px-4 md:px-10 z-30 text-white bg-stone-900  transition duration-500 drop-shadow-md ${
         navbarVisible ? "translate-y-0" : "md:-translate-y-full"
       }`}
     >
       <nav>
         <div className="flex justify-between items-center h-[90px]">
-          <Link href="/" className="flex-1">
+          <Link href="/" className="flex-1 text-xl">
             <span className="font-semibold">mab.</span>
             <span className="font-thin font-mono">photography</span>
           </Link>

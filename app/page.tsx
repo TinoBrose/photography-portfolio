@@ -103,7 +103,7 @@ export default function Home() {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="h-full max-w-[900px] w-full p-2 sm:p-4 my-6">
+        <Tab.Panels className="h-full max-w-[900px] w-full p-2 sm:p-4 mb-2">
           <Tab.Panel>
             <MasonryGrid images={images} lightboxRef={lightboxRef} />
             <Lightbox images={images} lightboxRef={lightboxRef} />
