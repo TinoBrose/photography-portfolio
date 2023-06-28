@@ -34,14 +34,14 @@ const MasonryGrid = ({
               lightboxRef.current?.openGallery(index);
             }}
           >
-            <img
+            <Image
               key={index}
-              src={image.url}
-              alt="123"
+              src={image.src_static}
+              alt={image.description}
               className="flex justify-center align-center my-4 mx-auto hover:opacity-90 "
+              placeholder="blur"
               onClick={() => {
                 lightboxRef.current?.openGallery(index);
-                console.log("test");
               }}
             />
             <div className="absolute z-40 bg-gradient-to-t from-stone-900 w-full h-full left-0 bottom-0 opacity-0 group-hover:translate-y-0 group-hover:opacity-50 cursor-pointer"></div>

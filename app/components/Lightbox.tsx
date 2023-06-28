@@ -8,12 +8,13 @@ import "lightgallery/css/lg-thumbnail.css";
 // import plugins if you need
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
+import { StaticImageData } from "next/image";
 
 const Lightbox = ({
   images,
   lightboxRef,
 }: {
-  images: any[];
+  images: { src_static: StaticImageData; src: string; description: string }[];
   lightboxRef: any;
 }) => {
   return (
@@ -26,18 +27,12 @@ const Lightbox = ({
       speed={500}
       download={false}
       plugins={[lgZoom]}
-      //   plugins={[lgThumbnail, lgZoom]}
       dynamic
       dynamicEl={images.map((image) => ({
-        src: image.url,
-        // thumb: image.url,
+        src: image.src,
         subHtml: `<h4>${image.description}</h4>`,
       }))}
     />
-    //   {images.map((index) => (
-    //     <img key={index} alt="img1" src={index} />
-    //   ))}
-    // </LightGallery>
   );
 };
 
